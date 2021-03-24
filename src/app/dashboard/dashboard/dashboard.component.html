@@ -1,0 +1,62 @@
+<mat-toolbar class="top-nav">
+    <mat-icon (click)="SideNav.toggle()">menu</mat-icon>
+    <span>My App</span>
+    <span class="toolbar-spacer"></span>
+    <mat-icon>favorite</mat-icon>
+    <mat-icon>share</mat-icon>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container" autosize>
+    <mat-sidenav #SideNav id="sidenav" class="sidenav" mode="side" [opened]="true">
+        <div class="sidenav__items">
+            <a href="#" class="sidenav__items-item">
+                <i class="bi bi-columns-gap"></i>
+                <p>Dashboard</p>
+            </a>
+
+            <a href="#" class="sidenav__items-item">
+                <i class="bi bi-file-text"></i>
+                <p>Tasks</p>
+            </a>
+
+            <a href="#" class="sidenav__items-item">
+                <i class="bi bi-people"></i>
+                <p>Team</p>
+            </a>
+
+            <a href="#" class="sidenav__items-item">
+                <i class="bi bi-chat-dots"></i>
+                <p>Chat</p>
+            </a>
+
+            <a href="#" class="sidenav__items-item">
+                <i class="bi bi-bar-chart"></i>
+                <p>Report</p>
+            </a>
+
+            <a href="#" class="sidenav__items-item">
+                <i class="bi bi-gear"></i>
+                <p>Settings</p>
+            </a>
+        </div>
+
+        <div class="sidenav__footer">
+            <a href="#" class="sidenav__items-item">
+                <i class="bi bi-info-circle"></i>
+                <p>help</p>
+            </a>
+
+            <a href="#" class="sidenav__items-item">
+                <i class="bi bi-box-arrow-right"></i>
+                <p>Logout</p>
+            </a>
+        </div>
+    </mat-sidenav>
+  
+    <div class="sidenav-content">
+        <span class="nav-toggle" id="nav-toggle"  (click)="smallNav()"><i class="bi bi-arrow-right-circle"></i></span>
+        <h1>content here</h1>
+        <div #Test></div>
+    </div>
+  
+</mat-sidenav-container>
