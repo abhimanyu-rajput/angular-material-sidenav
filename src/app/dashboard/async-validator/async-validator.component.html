@@ -1,0 +1,16 @@
+<h1>Async Validation</h1>
+
+<h4>You can not use these names : testname, admin, name, test, user, superuser</h4>
+
+<form [formGroup]="userForm">
+    <mat-form-field class="example-full-width">
+        <mat-label>UserName</mat-label>
+        <input matInput placeholder="User Name" #username formControlName="userName">
+    </mat-form-field>
+    <div *ngIf="userForm.controls.userName.errors?.emailExist">
+        User already exists.
+        <p>
+            {{userForm.controls.userName.errors | json}}
+        </p>
+    </div>
+</form>

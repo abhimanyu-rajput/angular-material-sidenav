@@ -21,7 +21,14 @@ mat-icon {
 
     .sidenav-content {
         height: 100%;
-        padding: 1rem;
+
+        .content-container {
+            padding: 1rem;
+        }
+
+        .support-toolbar {
+            height: 40px;
+        }
 
         .nav-toggle {
             font-size: 1.5rem;

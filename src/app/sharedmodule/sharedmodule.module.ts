@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-const deps = [CommonModule]
+const deps = [CommonModule,FlexLayoutModule, FormsModule, ReactiveFormsModule]
 
 @NgModule({
   declarations: [],

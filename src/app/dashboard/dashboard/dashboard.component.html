@@ -1,13 +1,12 @@
 <mat-toolbar class="top-nav">
     <mat-icon (click)="SideNav.toggle()">menu</mat-icon>
-    <span>My App</span>
+    <span>My App {{SideNav.opened}}</span>
     <span class="toolbar-spacer"></span>
-    <mat-icon>favorite</mat-icon>
-    <mat-icon>share</mat-icon>
+    <img src="assets/images/user.png" width="50"> 
 </mat-toolbar>
 
 <mat-sidenav-container class="sidenav-container" autosize>
-    <mat-sidenav #SideNav id="sidenav" class="sidenav" mode="side" [opened]="true">
+    <mat-sidenav #SideNav id="sidenav" class="sidenav" mode="side" opened>
         <div class="sidenav__items">
             <a href="#" class="sidenav__items-item">
                 <i class="bi bi-columns-gap"></i>
@@ -54,9 +53,16 @@
     </mat-sidenav>
   
     <div class="sidenav-content">
-        <span class="nav-toggle" id="nav-toggle"  (click)="smallNav()"><i class="bi bi-arrow-right-circle"></i></span>
-        <h1>content here</h1>
-        <div #Test></div>
+
+        <mat-toolbar class="support-toolbar">
+            <span class="nav-toggle" id="nav-toggle" *ngIf="SideNav.opened" (click)="smallNav()"><i class="bi bi-arrow-right-circle"></i></span>
+            <span class="toolbar-spacer"></span>
+            <button mat-button color="primary" routerLink="/dashboard/async-validation">Async-Validation</button>
+        </mat-toolbar>
+        
+        <div class="content-container">
+            <router-outlet></router-outlet>        
+        </div>
     </div>
   
 </mat-sidenav-container>
